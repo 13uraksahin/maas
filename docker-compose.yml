@@ -74,6 +74,16 @@ services:
     depends_on:
       - api
 
+  # Adminer - Database Management UI
+  adminer:
+    image: adminer
+    container_name: maas-adminer
+    restart: always
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+
 volumes:
   postgres_data:
   redis_data:
